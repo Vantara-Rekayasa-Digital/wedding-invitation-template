@@ -57,6 +57,17 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Wedding Theme Colors
+        "rose-gold": "hsl(var(--rose-gold))",
+        blush: "hsl(var(--blush))",
+        cream: "hsl(var(--cream))",
+        sage: "hsl(var(--sage))",
+        champagne: "hsl(var(--champagne))",
+        burgundy: "hsl(var(--burgundy))",
+      },
+      fontFamily: {
+        script: ["Great Vibes", "cursive"],
+        serif: ["Cormorant Garamond", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
