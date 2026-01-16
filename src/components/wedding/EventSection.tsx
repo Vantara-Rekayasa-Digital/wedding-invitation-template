@@ -105,7 +105,7 @@ const EventSection = () => {
                   <MapPin className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tempat</h3>
-                <p className="text-muted-foreground">Masjid Istiqlal</p>
+                <p className="text-muted-foreground">Masjid Jami' Al-Mustaqiim</p>
               </motion.div>
             </div>
 
