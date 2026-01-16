@@ -76,18 +76,14 @@ const CoupleSection = () => {
               <span className="text-accent text-2xl">✦</span>
             </div>
             <h3 className="font-script text-3xl md:text-4xl text-primary mb-4">
-              Aditya Pratama, S.Kom
+              Trisilo Bambang Setyo Wibowo
             </h3>
             <p className="text-muted-foreground font-serif text-lg mb-6">
               Putra dari
             </p>
             <div className="space-y-2">
               <p className="text-foreground font-semibold">
-                Bapak H. Ahmad Pratama
-              </p>
-              <p className="text-muted-foreground">&</p>
-              <p className="text-foreground font-semibold">
-                Ibu Hj. Siti Aminah
+                Alm. H. R. Moelyono
               </p>
             </div>
           </motion.div>
@@ -116,18 +112,14 @@ const CoupleSection = () => {
               <span className="text-accent text-2xl">✦</span>
             </div>
             <h3 className="font-script text-3xl md:text-4xl text-primary mb-4">
-              Sarah Amelia, S.Pd
+              Putri Aulia Rachma
             </h3>
             <p className="text-muted-foreground font-serif text-lg mb-6">
               Putri dari
             </p>
             <div className="space-y-2">
               <p className="text-foreground font-semibold">
-                Bapak H. Muhammad Ridwan
-              </p>
-              <p className="text-muted-foreground">&</p>
-              <p className="text-foreground font-semibold">
-                Ibu Hj. Nur Hasanah
+                Alm. Mulyantono Yakub
               </p>
             </div>
           </motion.div>
