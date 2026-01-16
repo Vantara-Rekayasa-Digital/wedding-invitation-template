@@ -11,7 +11,7 @@ const EventSection = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-blush">
+    <section className="py-20 px-6 bg-emerald-light islamic-pattern">
       <div className="max-w-4xl mx-auto">
         {/* Section Title */}
         <motion.div
@@ -25,19 +25,30 @@ const EventSection = () => {
             Waktu & Tempat
           </h2>
           <div className="ornament-divider max-w-xs mx-auto">
-            <span className="px-4 text-primary">✦</span>
+            <span className="px-4 text-accent">☪</span>
           </div>
         </motion.div>
 
         {/* Event Card */}
         <motion.div
-          className="bg-card rounded-2xl shadow-xl p-8 md:p-12"
+          className="bg-card rounded-2xl shadow-xl p-8 md:p-12 border border-primary/10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
           <div className="text-center">
+            {/* Arabic text for Akad */}
+            <motion.div
+              className="mb-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="font-arabic text-xl text-primary" dir="rtl">عَقْدُ النِّكَاحِ</p>
+            </motion.div>
+
             <motion.div
               className="inline-block px-6 py-2 bg-primary/10 rounded-full mb-8"
               initial={{ scale: 0 }}
@@ -59,11 +70,12 @@ const EventSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 border border-primary/20">
                   <Calendar className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tanggal</h3>
                 <p className="text-muted-foreground">Sabtu, 15 Februari 2026</p>
+                <p className="text-muted-foreground text-sm">20 Sya'ban 1447 H</p>
               </motion.div>
 
               {/* Time */}
@@ -74,7 +86,7 @@ const EventSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 border border-primary/20">
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Waktu</h3>
@@ -89,7 +101,7 @@ const EventSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6 }}
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 border border-primary/20">
                   <MapPin className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tempat</h3>
@@ -99,7 +111,7 @@ const EventSection = () => {
 
             {/* Address */}
             <motion.div
-              className="bg-muted/50 rounded-xl p-6 mb-8"
+              className="bg-muted/50 rounded-xl p-6 mb-8 border border-primary/10"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
