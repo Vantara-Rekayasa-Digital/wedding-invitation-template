@@ -118,8 +118,7 @@ const EventSection = () => {
               transition={{ delay: 0.7 }}
             >
               <p className="text-foreground font-serif text-lg leading-relaxed">
-                Jl. Taman Wijaya Kusuma, Ps. Baru, Kecamatan Sawah Besar,
-                Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710
+                Jl. Alamanda Mas III No.17, Bambu Apus, Kec. Pamulang, Kota Tangerang Selatan, Banten 15415
               </p>
             </motion.div>
 
