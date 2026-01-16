@@ -5,8 +5,7 @@ import { Calendar, Clock, MapPin } from "lucide-react";
 const EventSection = () => {
   const handleOpenMaps = () => {
     window.open(
-      "https://maps.app.goo.gl/ALch4CSkH7ZZsy2U6",
-      "_blank"
+      "https://maps.app.goo.gl/ALch4CSkH7ZZsy2U6"
     );
   };
 
