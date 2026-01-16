@@ -1,11 +1,11 @@
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const EventSection = () => {
   const handleOpenMaps = () => {
     window.open(
-      "https://maps.google.com/?q=Masjid+Istiqlal+Jakarta",
+      "https://maps.app.goo.gl/ALch4CSkH7ZZsy2U6",
       "_blank"
     );
   };
@@ -118,7 +118,7 @@ const EventSection = () => {
               transition={{ delay: 0.7 }}
             >
               <p className="text-foreground font-serif text-lg leading-relaxed">
-                Jl. Taman Wijaya Kusuma, Ps. Baru, Kecamatan Sawah Besar, 
+                Jl. Taman Wijaya Kusuma, Ps. Baru, Kecamatan Sawah Besar,
                 Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710
               </p>
             </motion.div>
