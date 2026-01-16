@@ -74,8 +74,8 @@ const EventSection = () => {
                   <Calendar className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tanggal</h3>
-                <p className="text-muted-foreground">Sabtu, 15 Februari 2026</p>
-                <p className="text-muted-foreground text-sm">20 Sya'ban 1447 H</p>
+                <p className="text-muted-foreground">Senin, 26 Januari 2026</p>
+                <p className="text-muted-foreground text-sm">26 Rajab 1447 H</p>
               </motion.div>
 
               {/* Time */}
@@ -90,7 +90,7 @@ const EventSection = () => {
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Waktu</h3>
-                <p className="text-muted-foreground">09:00 - 12:00 WIB</p>
+                <p className="text-muted-foreground">10:00 WIB - Selesai</p>
               </motion.div>
 
               {/* Location */}

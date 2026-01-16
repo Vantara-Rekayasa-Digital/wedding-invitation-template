@@ -98,7 +98,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.6 }}
         >
-          <p className="text-muted-foreground text-sm mb-2">Sabtu, 15 Februari 2026</p>
+          <p className="text-muted-foreground text-sm mb-2">Senin, 26 Januari 2026</p>
           <p className="text-primary font-semibold">Insya Allah akan dilaksanakan</p>
         </motion.div>
       </motion.div>
