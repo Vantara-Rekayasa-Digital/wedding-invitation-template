@@ -60,7 +60,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
         >
-          Aditya & Sarah
+          Trisilo & Putri
         </motion.h1>
 
         <motion.p

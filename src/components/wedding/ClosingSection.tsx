@@ -119,7 +119,7 @@ const ClosingSection = () => {
             transition={{ delay: 0.9 }}
           >
             <p className="font-script text-3xl md:text-4xl text-primary">
-              Aditya & Sarah
+              Trisilo & Putri
             </p>
           </motion.div>
         </motion.div>
@@ -134,7 +134,7 @@ const ClosingSection = () => {
         transition={{ delay: 1 }}
       >
         <p className="text-muted-foreground text-sm">
-          Made with ❤️ for Aditya & Sarah
+          Made with ❤️ for Trisilo & Putri
         </p>
       </motion.footer>
     </section>
