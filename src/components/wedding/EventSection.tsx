@@ -10,17 +10,17 @@ const EventSection = () => {
   };
 
   return (
-    <section className="py-20 px-6 bg-emerald-light islamic-pattern">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative py-10 px-6 bg-emerald-light islamic-pattern overflow-hidden">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Section Title */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-script text-4xl md:text-5xl text-primary mb-6">
+          <h2 className="font-script text-4xl text-primary mb-2">
             Waktu & Tempat
           </h2>
           <div className="ornament-divider max-w-xs mx-auto">
@@ -30,7 +30,7 @@ const EventSection = () => {
 
         {/* Event Card */}
         <motion.div
-          className="bg-card rounded-2xl shadow-xl p-8 md:p-12 border border-primary/10"
+          className="bg-card rounded-2xl shadow-xl p-6 border border-primary/10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -60,7 +60,7 @@ const EventSection = () => {
               </span>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
               {/* Date */}
               <motion.div
                 className="flex flex-col items-center"
@@ -73,8 +73,8 @@ const EventSection = () => {
                   <Calendar className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tanggal</h3>
-                <p className="text-muted-foreground">Senin, 26 Januari 2026</p>
-                <p className="text-muted-foreground text-sm">26 Rajab 1447 H</p>
+                <p className=""><span className="text-xl">Senin, 26 Januari 2026</span></p>
+                <p className="text-sm"><span className="text-md">07 Sya'ban 1447 H</span></p>
               </motion.div>
 
               {/* Time */}
@@ -89,7 +89,7 @@ const EventSection = () => {
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Waktu</h3>
-                <p className="text-muted-foreground">10:00 WIB - Selesai</p>
+                <p className="text-lg"><span className="text-xl">09:30</span> WIB - Selesai</p>
               </motion.div>
 
               {/* Location */}
@@ -104,7 +104,7 @@ const EventSection = () => {
                   <MapPin className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Tempat</h3>
-                <p className="text-muted-foreground">Masjid Jami' Al-Mustaqiim</p>
+                <p className="text-lg">Masjid Jami' Al-Mustaqiim</p>
               </motion.div>
             </div>
 

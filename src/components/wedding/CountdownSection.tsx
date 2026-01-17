@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const CountdownSection = () => {
   const targetDate = new Date("2026-01-26T10:00:00+07:00").getTime();
@@ -49,18 +49,33 @@ const CountdownSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
+          {/* Arabic title for Akad */}
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+          >
+            <p className="font-arabic text-2xl md:text-3xl text-primary" dir="rtl">عَقْدُ النِّكَاحِ</p>
+            <p className="text-muted-foreground text-xs tracking-widest uppercase mt-1">Akad Nikah (Ijab & Qabul)</p>
+          </motion.div>
+
           <h2 className="font-script text-3xl md:text-4xl text-primary mb-2">
-            Menghitung Hari
+            Menghitung Hari Istimewa
           </h2>
-          <p className="text-muted-foreground text-sm mb-8">
+          <p className="text-muted-foreground text-sm mb-2">
             Senin, 26 Januari 2026 • 10:00 WIB
           </p>
+          <p className="text-muted-foreground text-xs mb-8 italic">
+            07 Sya'ban 1447 H
+          </p>
 
-          <div className="grid grid-cols-4 gap-3 md:gap-6 max-w-lg mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-lg mx-auto">
             {timeUnits.map((unit, index) => (
               <motion.div
                 key={unit.label}
-                className="bg-card rounded-xl p-4 md:p-6 shadow-lg border border-primary/10"
+                className="bg-card rounded-xl p-3 sm:p-4 md:p-6 shadow-lg border border-primary/10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -81,16 +96,6 @@ const CountdownSection = () => {
               </motion.div>
             ))}
           </div>
-
-          <motion.p
-            className="text-muted-foreground text-sm mt-8 italic"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-          >
-            Insya Allah
-          </motion.p>
         </motion.div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -36,7 +36,6 @@ All colors MUST be HSL.
     --border: 45 25% 85%;
     --input: 45 25% 85%;
     --ring: 160 50% 35%;
-
     --radius: 0.5rem;
 
     /* Custom Islamic Wedding Colors */
@@ -139,4 +138,21 @@ All colors MUST be HSL.
   .star-ornament::before {
     content: '✧';
   }
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  cursor: pointer;
+  border: none;
+}
 }
