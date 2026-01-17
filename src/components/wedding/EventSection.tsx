@@ -1,3 +1,4 @@
+import eventBackground from "@/assets/background-undangan-3.png";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
@@ -10,7 +11,14 @@ const EventSection = () => {
   };
 
   return (
-    <section className="relative py-10 px-6 bg-emerald-light islamic-pattern overflow-hidden">
+    <section
+      className="relative py-10 px-6 overflow-hidden bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${eventBackground})`,
+        backgroundSize: "cover"
+      }}
+    >
+      <div className="absolute inset-0 bg-emerald-light/70" />
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Section Title */}
         <motion.div

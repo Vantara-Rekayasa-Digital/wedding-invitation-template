@@ -34,9 +34,6 @@ const CoupleSection = () => {
               <p className="font-arabic text-2xl mb-3" dir="rtl" style={textShadowVeryHeavy}>
                 اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
               </p>
-              <p className="text-sm tracking-wide font-serif" style={textShadowLight}>
-                Assalamu'alaikum Warahmatullahi Wabarakatuh
-              </p>
             </motion.div>
             <br />
             <p
