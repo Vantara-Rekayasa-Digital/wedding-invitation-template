@@ -4,8 +4,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const HeroSection = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface HeroSectionProps {
+  isOpen: boolean;
+  onOpen: () => void;
+}
+
+const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
   const [searchParams] = useSearchParams();
   const guestName = searchParams.get("to");
 
@@ -46,7 +50,7 @@ const HeroSection = () => {
   ];
 
   const handleOpenInvitation = () => {
-    setIsOpen(true);
+    onOpen();
     // Scroll to top of the page
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

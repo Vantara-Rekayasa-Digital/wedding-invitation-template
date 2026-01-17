@@ -4,6 +4,7 @@ import EventSection from "@/components/wedding/EventSection";
 import HeroSection from "@/components/wedding/HeroSection";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 import SurahSection from "@/components/wedding/SurahSection";
+import { useState } from "react";
 
 const SectionDivider = () => (
   <div className="flex justify-center items-center py-4">
@@ -14,19 +15,25 @@ const SectionDivider = () => (
 );
 
 const Index = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <main className="overflow-x-hidden">
-      <HeroSection />
-      <SectionDivider />
-      <SurahSection />
-      <SectionDivider />
-      <CoupleSection />
-      <SectionDivider />
-      <EventSection />
-      <SectionDivider />
-      <ClosingSection />
-      <SectionDivider />
-      <MusicPlayer />
+      <HeroSection isOpen={isOpen} onOpen={() => setIsOpen(true)} />
+      {isOpen && (
+        <>
+          <SectionDivider />
+          <SurahSection />
+          <SectionDivider />
+          <CoupleSection />
+          <SectionDivider />
+          <EventSection />
+          <SectionDivider />
+          <ClosingSection />
+          <SectionDivider />
+          <MusicPlayer />
+        </>
+      )}
     </main>
   );
 };
