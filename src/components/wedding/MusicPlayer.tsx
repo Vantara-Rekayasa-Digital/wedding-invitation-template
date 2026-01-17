@@ -17,19 +17,33 @@ const MusicPlayer = () => {
             audio.volume = volume;
             audio.muted = isMuted;
 
-            // Auto-play attempt (may be blocked by browser)
+            // Auto-play attempt with retry logic
             const playAudio = async () => {
                 try {
                     await audio.play();
                     setIsPlaying(true);
                 } catch (error) {
-                    console.log("Auto-play blocked by browser");
+                    console.log("Auto-play blocked by browser, will retry on user interaction");
+                    // Setup auto-play on first user interaction if needed
+                    const playOnInteraction = async () => {
+                        try {
+                            await audio.play();
+                            setIsPlaying(true);
+                            document.removeEventListener('click', playOnInteraction);
+                            document.removeEventListener('touchstart', playOnInteraction);
+                        } catch (e) {
+                            console.log("Play on interaction also failed");
+                        }
+                    };
+                    document.addEventListener('click', playOnInteraction);
+                    document.addEventListener('touchstart', playOnInteraction);
                 }
             };
 
-            playAudio();
+            // Delay auto-play slightly to ensure audio is ready
+            setTimeout(playAudio, 500);
         }
-    }, [volume, isMuted]);
+    }, []);
 
     // Auto-pause/resume when tab visibility changes
     useEffect(() => {
@@ -98,7 +112,8 @@ const MusicPlayer = () => {
             <audio
                 ref={audioRef}
                 loop
-                preload="metadata"
+                preload="auto"
+                crossOrigin="anonymous"
             >
                 <source src={mashaAllahMusic} type="audio/mpeg" />
                 Browser Anda tidak mendukung pemutaran audio.
