@@ -31,9 +31,6 @@ const EventSection = () => {
           <h2 className="font-script text-4xl text-primary mb-2">
             Waktu & Tempat
           </h2>
-          <div className="ornament-divider max-w-xs mx-auto">
-            <span className="px-4 text-accent">☪</span>
-          </div>
         </motion.div>
 
         {/* Event Card */}
@@ -68,7 +65,7 @@ const EventSection = () => {
               </span>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:space-x-6 space-y-8 sm:space-y-0 mb-6">
               {/* Date */}
               <motion.div
                 className="flex flex-col items-center"
@@ -102,7 +99,7 @@ const EventSection = () => {
 
               {/* Location */}
               <motion.div
-                className="flex flex-col items-center"
+                className="flex flex-col items-center justify-self-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

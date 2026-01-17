@@ -19,6 +19,7 @@ const Index = () => {
 
   return (
     <main className="overflow-x-hidden">
+      <MusicPlayer />
       <HeroSection isOpen={isOpen} onOpen={() => setIsOpen(true)} />
       {isOpen && (
         <>
@@ -30,8 +31,6 @@ const Index = () => {
           <EventSection />
           <SectionDivider />
           <ClosingSection />
-          <SectionDivider />
-          <MusicPlayer />
         </>
       )}
     </main>

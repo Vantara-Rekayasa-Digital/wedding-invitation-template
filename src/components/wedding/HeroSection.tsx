@@ -59,27 +59,29 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
     <AnimatePresence>
       {!isOpen && (
         <motion.section
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-auto"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.1 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           {/* Mosque Header Background */}
           <motion.div
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
-            <img
-              src={mosqueHeader}
-              alt="Dekorasi Masjid"
-              className="w-full h-full object-cover"
-            />
+            <div className="relative">
+              <img
+                src={mosqueHeader}
+                alt="Dekorasi Masjid"
+                className="max-w-none"
+                style={{ height: "100vh", width: "auto" }}
+              />
+              {/* Overlay on image */}
+              <div className="absolute inset-0 bg-black/40 pointer-events-none" />
+            </div>
           </motion.div>
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
 
           {/* Content */}
           <motion.div
@@ -109,7 +111,6 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
               animate={{ opacity: 1, width: "100%" }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <span className="px-4 text-white text-2xl" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>☪</span>
             </motion.div>
 
             <motion.p
@@ -172,8 +173,8 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.8, duration: 0.6 }}
             >
-              <p className="text-white text-sm md:text-base mb-3 tracking-wide" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
-                Senin, 26 Januari 2026 • 10:00 WIB
+              <p className="text-white text-lg md:text-xl mb-3 tracking-wide" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
+                Senin, 26 Januari 2026 • 09:30 WIB
               </p>
               <div className="grid grid-cols-4 gap-2 sm:gap-3 max-w-md mx-auto mb-4">
                 {timeUnits.map((unit, index) => (

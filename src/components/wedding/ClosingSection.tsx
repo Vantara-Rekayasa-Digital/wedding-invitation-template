@@ -19,16 +19,6 @@ const ClosingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Islamic ornament */}
-            <motion.div
-              className="mb-8"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, type: "spring" }}
-            >
-              <span className="text-4xl text-gold" style={{ textShadow: "2px 2px 4px rgba(0,0,0,0.8)" }}>☪</span>
-            </motion.div>
 
             <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-white mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.8)" }}>
               Jazakumullahu Khairan
@@ -169,7 +159,13 @@ const ClosingSection = () => {
                 Keluarga Besar
               </p>
               <p className="font-script text-2xl md:text-3xl text-primary text-center">
-                Putri Aulia Rachma & Trisilo Bambang Setyo Wibowo
+                Putri Aulia Rachma
+              </p>
+              <p className="font-script text-2xl md:text-3xl text-primary text-center">
+                &
+              </p>
+              <p className="font-script text-2xl md:text-3xl text-primary text-center">
+                Trisilo Bambang Setyo Wibowo
               </p>
             </div>
           </div>
