@@ -25,7 +25,7 @@ const ClosingSection = () => {
             </h2>
 
             <p className="text-white text-sm mb-8" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
-              Semoga Allah membalas kebaikan Anda
+              Semoga Alloh membalas kebaikan Anda
             </p>
 
             <motion.p
@@ -40,7 +40,7 @@ const ClosingSection = () => {
               apabila Bapak/Ibu/Saudara/i berkenan hadir
               untuk memberikan doa restu kepada kedua mempelai.
               Semoga Alloh SWT memberkahi walimatul ursy ini,
-              menjadikannya keluarga yang sakinah, mawaddah, wa rahmah.
+              menjadikannya keluarga yang sakinah, mawaddah, warrahmah.
             </motion.p>
 
           </motion.div>
