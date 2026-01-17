@@ -59,7 +59,7 @@ const ClosingSection = () => {
           >
 
             <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary mb-8">
-              Sakinah Mawaddah Warahmah
+              Sakinah Mawaddah Warrohmah
             </h2>
 
             {/* Sakinah Mawaddah Warahmah Card */}
