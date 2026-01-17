@@ -1,4 +1,4 @@
-import eventBackground from "@/assets/background-undangan-3.png";
+import eventBackground from "@/assets/background-undangan-3.webp";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Calendar, Clock, MapPin } from "lucide-react";
@@ -94,7 +94,7 @@ const EventSection = () => {
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Waktu</h3>
-                <p className="text-lg"><span className="text-xl">09:30</span> WIB - Selesai</p>
+                <p className="text-lg"><span className="text-xl">10:00</span> WIB - Selesai</p>
               </motion.div>
 
               {/* Location */}

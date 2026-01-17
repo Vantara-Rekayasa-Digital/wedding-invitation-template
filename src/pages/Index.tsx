@@ -23,7 +23,6 @@ const Index = () => {
       <HeroSection isOpen={isOpen} onOpen={() => setIsOpen(true)} />
       {isOpen && (
         <>
-          <SectionDivider />
           <SurahSection />
           <SectionDivider />
           <CoupleSection />

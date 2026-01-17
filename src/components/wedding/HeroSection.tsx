@@ -1,4 +1,4 @@
-import mosqueHeader from "@/assets/background-undangan.png";
+import mosqueHeader from "@/assets/background-undangan.webp";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -66,7 +66,7 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
         >
           {/* Mosque Header Background */}
           <motion.div
-            className="absolute top-0 left-0 w-full h-full flex items-center justify-center"
+            className="absolute top-0 left-0 w-full h-full flex items-center justify-center overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
@@ -76,7 +76,7 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
                 src={mosqueHeader}
                 alt="Dekorasi Masjid"
                 className="max-w-none"
-                style={{ height: "100vh", width: "auto" }}
+                style={{ height: "100vh", width: "auto", objectPosition: "-100px center" }}
               />
               {/* Overlay on image */}
               <div className="absolute inset-0 bg-black/40 pointer-events-none" />
@@ -174,7 +174,7 @@ const HeroSection = ({ isOpen, onOpen }: HeroSectionProps) => {
               transition={{ delay: 1.8, duration: 0.6 }}
             >
               <p className="text-white text-lg md:text-xl mb-3 tracking-wide" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
-                Senin, 26 Januari 2026 • 09:30 WIB
+                Senin, 26 Januari 2026 • 10:00 WIB
               </p>
               <div className="grid grid-cols-4 gap-2 sm:gap-3 max-w-md mx-auto mb-4">
                 {timeUnits.map((unit, index) => (

@@ -1,4 +1,4 @@
-import mosqueHeader from "@/assets/background-undangan.png";
+import mosqueHeader from "@/assets/background-undangan.webp";
 import { motion } from "framer-motion";
 
 const CoupleSection = () => {
@@ -13,7 +13,7 @@ const CoupleSection = () => {
       {/* Main Content with Mosque Background */}
       <div
         className="py-8 px-6 bg-cover bg-center relative text-white"
-        style={{ backgroundImage: `url(${mosqueHeader})`, backgroundSize: 'cover' }}
+        style={{ backgroundImage: `url(${mosqueHeader})`, backgroundSize: 'cover', backgroundPosition: ' -400px center' }}
       >
         <div className="absolute inset-0 bg-gray-900/60" />
         <div className="relative max-w-4xl mx-auto text-center">
@@ -58,7 +58,25 @@ const CoupleSection = () => {
                   className="font-serif text-base"
                   style={textShadowLight}
                 >
-                  Putri Kedua dari Alm. Mulyantono Yakub & Alm. Rahmawati
+                  Putri Kedua dari
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  Alm. Mulyantono Yakub
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  &
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  Alm. Rahmawati
                 </p>
               </div>
               <span className="font-script text-3xl sm:text-4xl text-white mx-4" style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.8)" }}>
@@ -75,7 +93,25 @@ const CoupleSection = () => {
                   className="font-serif text-base"
                   style={textShadowLight}
                 >
-                  Putra Ketiga dari Alm. H. R. Moelyono & Hj. Sutiyatmi
+                  Putra Ketiga dari
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  Alm. H. R. Moelyono
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  &
+                </p>
+                <p
+                  className="font-serif text-base"
+                  style={textShadowLight}
+                >
+                  Hj. Sutiyatmi
                 </p>
               </div>
             </div>

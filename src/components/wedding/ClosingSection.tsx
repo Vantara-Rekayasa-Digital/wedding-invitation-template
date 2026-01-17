@@ -1,4 +1,4 @@
-import mosqueBackground from "@/assets/background-undangan-2.png";
+import mosqueBackground from "@/assets/background-undangan-2.webp";
 import { motion } from "framer-motion";
 
 const ClosingSection = () => {
@@ -7,7 +7,7 @@ const ClosingSection = () => {
     <>
       {/* Part 1: Jazakumullahu Khairan */}
       <section
-        className="py-10 sm:py-20 px-4 sm:px-6 bg-cover bg-center relative text-white"
+        className="pb-[150px] pt-10 px-4 bg-cover bg-center relative text-white"
         style={{ backgroundImage: `url(${mosqueBackground})` }}
       >
         <div className="absolute inset-0 bg-gray-900/60" />
@@ -20,7 +20,7 @@ const ClosingSection = () => {
             transition={{ duration: 0.8 }}
           >
 
-            <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-white mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.8)" }}>
+            <h2 className="font-script text-3xl text-white mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.8)" }}>
               Jazakumullahu Khairan
             </h2>
 
