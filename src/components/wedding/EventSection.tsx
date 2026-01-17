@@ -94,7 +94,7 @@ const EventSection = () => {
                   <Clock className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-1">Waktu</h3>
-                <p className="text-lg"><span className="text-xl">10:00</span> WIB - Selesai</p>
+                <p className="text-lg"><span className="text-xl">10:00</span> WIB - <span className="text-xl">11:30</span> WIB</p>
               </motion.div>
 
               {/* Location */}

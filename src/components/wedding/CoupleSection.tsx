@@ -40,7 +40,7 @@ const CoupleSection = () => {
               className="font-serif text-lg max-w-xl mx-auto mb-12"
               style={textShadowLight}
             >
-              Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
+              Dengan memohon rahmat dan ridho Alloh SWT, kami bermaksud
               mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara walimatul ursy putra-putri
               kami:
             </p>

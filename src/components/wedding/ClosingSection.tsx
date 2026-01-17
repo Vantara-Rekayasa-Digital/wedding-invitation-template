@@ -5,7 +5,7 @@ const ClosingSection = () => {
   const textShadowLight = { textShadow: "1px 1px 3px rgba(0,0,0,0.5)" };
   return (
     <>
-      {/* Part 1: Jazakumullahu Khairan */}
+      {/* Part 1: Jazakumullohu Khoiron */}
       <section
         className="pb-[150px] pt-10 px-4 bg-cover bg-center relative text-white"
         style={{ backgroundImage: `url(${mosqueBackground})` }}
@@ -21,7 +21,7 @@ const ClosingSection = () => {
           >
 
             <h2 className="font-script text-3xl text-white mb-2" style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.8)" }}>
-              Jazakumullahu Khairan
+              Jazakumullohu Khoiron
             </h2>
 
             <p className="text-white text-sm mb-8" style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.7)" }}>
@@ -39,7 +39,7 @@ const ClosingSection = () => {
               Merupakan suatu kehormatan dan kebahagiaan bagi kami
               apabila Bapak/Ibu/Saudara/i berkenan hadir
               untuk memberikan doa restu kepada kedua mempelai.
-              Semoga Allah SWT memberkahi walimatul ursy ini,
+              Semoga Alloh SWT memberkahi walimatul ursy ini,
               menjadikannya keluarga yang sakinah, mawaddah, wa rahmah.
             </motion.p>
 
@@ -57,16 +57,6 @@ const ClosingSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            {/* Islamic ornament */}
-            {/* <motion.div
-              className="mb-8"
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, type: "spring" }}
-            >
-              <span className="text-4xl text-accent">☪</span>
-            </motion.div> */}
 
             <h2 className="font-script text-3xl sm:text-4xl md:text-5xl text-primary mb-8">
               Sakinah Mawaddah Warahmah
@@ -84,7 +74,7 @@ const ClosingSection = () => {
                 السَّكِينَةُ وَالْمَوَدَّةُ وَالرَّحْمَةُ
               </p>
               <p className="text-foreground font-serif text-xl leading-relaxed mb-4">
-                Sakinah Mawaddah Warahmah
+                Sakinah Mawaddah Warrohmah
               </p>
               <p className="text-muted-foreground text-base italic mb-6 border-t border-primary/20 pt-6">
                 "Ketenangan, Kasih Sayang, dan Belas Kasihan"
@@ -104,7 +94,7 @@ const ClosingSection = () => {
                   </p>
                 </div>
                 <div>
-                  <p className="font-semibold text-primary mb-2">Warahmah (الرَّحْمَةُ) - Belas Kasihan</p>
+                  <p className="font-semibold text-primary mb-2">Warrohmah (الرَّحْمَةُ) - Belas Kasihan</p>
                   <p className="text-muted-foreground text-sm">
                     Belas kasihan dan kepedulian dalam setiap langkah kehidupan, saling memaafkan dan memahami.
                   </p>
@@ -112,7 +102,7 @@ const ClosingSection = () => {
               </div>
 
               <p className="text-muted-foreground text-sm italic mt-6 pt-6 border-t border-primary/20">
-                Semoga Allah memberikan ketiga hal ini dalam perjalanan hidup kami sebagai suami istri,
+                Semoga Alloh memberikan ketiga hal ini dalam perjalanan hidup kami sebagai suami istri,
                 dan semoga menjadi teladan keluarga yang sakinah bagi yang lain.
               </p>
             </motion.div>
@@ -140,7 +130,7 @@ const ClosingSection = () => {
           <div className="bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl p-8 md:p-10 border border-primary/20 shadow-lg">
             <p className="text-foreground font-serif text-base md:text-lg leading-relaxed mb-4 text-center">
               Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i,<br />
-              kami ucapkan jazakumullahu khairan katsiran.
+              kami ucapkan jazakumullohu khoiron katsiran.
             </p>
 
             <p className="font-arabic text-xl md:text-2xl text-primary mb-6 text-center" dir="rtl">
@@ -148,7 +138,7 @@ const ClosingSection = () => {
             </p>
 
             <p className="text-muted-foreground text-sm mb-4 text-center">
-              Wassalamu'alaikum Warahmatullahi Wabarakatuh
+              Wassalamu'alaikum Warrohmatullohi Wabarokatuh
             </p>
 
             <div className="border-t border-primary/20 pt-6 mt-6">
