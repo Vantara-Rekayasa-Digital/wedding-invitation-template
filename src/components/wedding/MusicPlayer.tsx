@@ -1,49 +1,57 @@
 import mashaAllahMusic from "@/assets/music/alhijratu.mp3";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Pause, Play, Volume2, VolumeX } from "lucide-react";
+import { Pause, Play, Volume, Volume1, Volume2, VolumeX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-const MusicPlayer = () => {
+interface MusicPlayerProps {
+    shouldPlay?: boolean;
+}
+
+const MusicPlayer = ({ shouldPlay = false }: MusicPlayerProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);
-    const [volume, setVolume] = useState(0.3);
+    const [volume, setVolume] = useState(1.0);
+    const [showVolumeBar, setShowVolumeBar] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const audioRef = useRef<HTMLAudioElement>(null);
     const wasPlayingRef = useRef(false);
+
+    // Detect if screen is mobile/small
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 640); // sm breakpoint is 640px
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const audio = audioRef.current;
         if (audio) {
             audio.volume = volume;
             audio.muted = isMuted;
+        }
+    }, [volume, isMuted]);
 
-            // Auto-play attempt with retry logic
+    // Play music when shouldPlay prop becomes true
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (audio && shouldPlay && !isPlaying) {
             const playAudio = async () => {
                 try {
                     await audio.play();
                     setIsPlaying(true);
                 } catch (error) {
-                    console.log("Auto-play blocked by browser, will retry on user interaction");
-                    // Setup auto-play on first user interaction if needed
-                    const playOnInteraction = async () => {
-                        try {
-                            await audio.play();
-                            setIsPlaying(true);
-                            document.removeEventListener('click', playOnInteraction);
-                            document.removeEventListener('touchstart', playOnInteraction);
-                        } catch (e) {
-                            console.log("Play on interaction also failed");
-                        }
-                    };
-                    document.addEventListener('click', playOnInteraction);
-                    document.addEventListener('touchstart', playOnInteraction);
+                    console.log("Auto-play blocked by browser");
                 }
             };
-
-            // Delay auto-play slightly to ensure audio is ready
-            setTimeout(playAudio, 500);
+            playAudio();
         }
-    }, []);
+    }, [shouldPlay]);
 
     // Auto-pause/resume when tab visibility changes
     useEffect(() => {
@@ -98,11 +106,34 @@ const MusicPlayer = () => {
         setIsMuted(!isMuted);
     };
 
+    const handleVolumeIconClick = () => {
+        if (isMobile) {
+            // On mobile, toggle volume bar visibility
+            setShowVolumeBar(!showVolumeBar);
+        } else {
+            // On desktop, toggle mute
+            toggleMute();
+        }
+    };
+
     const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newVolume = parseFloat(e.target.value);
         setVolume(newVolume);
         if (audioRef.current) {
             audioRef.current.volume = newVolume;
+        }
+    };
+
+    // Get volume icon based on current volume level
+    const getVolumeIcon = () => {
+        if (isMuted || volume === 0) {
+            return <VolumeX className="h-4 w-4 text-primary" />;
+        } else if (volume < 0.33) {
+            return <Volume className="h-4 w-4 text-primary" />;
+        } else if (volume < 0.66) {
+            return <Volume1 className="h-4 w-4 text-primary" />;
+        } else {
+            return <Volume2 className="h-4 w-4 text-primary" />;
         }
     };
 
@@ -143,22 +174,30 @@ const MusicPlayer = () => {
                         </Button>
 
                         {/* Volume Control */}
-                        <div className="flex items-center space-x-2">
+                        <div
+                            className="flex items-center space-x-2 relative"
+                            onMouseEnter={() => !isMobile && setShowVolumeBar(true)}
+                            onMouseLeave={() => !isMobile && setShowVolumeBar(false)}
+                        >
                             <Button
-                                onClick={toggleMute}
+                                onClick={handleVolumeIconClick}
                                 size="sm"
                                 variant="ghost"
                                 className="h-8 w-8 p-0 rounded-full hover:bg-primary/10"
                             >
-                                {isMuted ? (
-                                    <VolumeX className="h-4 w-4 text-primary" />
-                                ) : (
-                                    <Volume2 className="h-4 w-4 text-primary" />
-                                )}
+                                {getVolumeIcon()}
                             </Button>
 
-                            {/* Volume Slider - Hidden on mobile, shown on larger screens */}
-                            <div className="hidden sm:block">
+                            {/* Volume Slider - Show on click for mobile, on hover for desktop */}
+                            <motion.div
+                                className="overflow-hidden"
+                                initial={{ width: 0, opacity: 0 }}
+                                animate={{
+                                    width: showVolumeBar ? 64 : 0,
+                                    opacity: showVolumeBar ? 1 : 0
+                                }}
+                                transition={{ duration: 0.2 }}
+                            >
                                 <input
                                     type="range"
                                     min="0"
@@ -169,7 +208,7 @@ const MusicPlayer = () => {
                                     className="w-16 h-1 bg-primary/20 rounded-lg appearance-none cursor-pointer slider"
                                     disabled={isMuted}
                                 />
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

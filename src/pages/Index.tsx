@@ -19,7 +19,7 @@ const Index = () => {
 
   return (
     <main className="overflow-x-hidden">
-      <MusicPlayer />
+      <MusicPlayer shouldPlay={isOpen} />
       <HeroSection isOpen={isOpen} onOpen={() => setIsOpen(true)} />
       {isOpen && (
         <>

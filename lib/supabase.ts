@@ -1,0 +1,17 @@
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.SUPABASE_KEY || '';
+
+export const supabase = supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey)
+    : null;
+
+export interface RSVPData {
+    id?: number;
+    name: string;
+    attendance: string;
+    guests: number;
+    message: string;
+    created_at?: string;
+}

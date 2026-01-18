@@ -1,5 +1,6 @@
 import mosqueBackground from "@/assets/background-undangan-2.webp";
 import { motion } from "framer-motion";
+import RSVPSection from "./RSVPSection";
 
 const ClosingSection = () => {
   const textShadowLight = { textShadow: "1px 1px 3px rgba(0,0,0,0.5)" };
@@ -116,6 +117,9 @@ const ClosingSection = () => {
             >
               <span className="px-4 text-accent">✦</span>
             </motion.div>
+
+            {/* RSVP Section */}
+            <RSVPSection />
           </motion.div>
         </div>
 
