@@ -1,17 +1,38 @@
 import cors from 'cors';
 import express from 'express';
-import { createConnection } from './db';
+import { createClient } from '@supabase/supabase-js';
+
+// Load environment variables if available
+if (typeof process.loadEnvFile === 'function') {
+    try {
+        process.loadEnvFile('.env.local');
+    } catch {
+        try {
+            process.loadEnvFile('.env');
+        } catch {
+            // Ignore if files don't exist
+        }
+    }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const supabaseUrl = process.env.SUPABASE_URL || '';
+const supabaseKey = process.env.SUPABASE_KEY || '';
+
+const supabase = supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey)
+    : null;
+
 app.use(cors());
 app.use(express.json());
 
-// Initialize database on server start
-createConnection().then(() => {
-    console.log('Database initialized');
-});
+if (supabase) {
+    console.log('Connected to Supabase:', supabaseUrl);
+} else {
+    console.warn('Warning: SUPABASE_URL or SUPABASE_KEY not set');
+}
 
 // RSVP endpoints
 app.post('/api/rsvp', async (req, res) => {
@@ -25,49 +46,74 @@ app.post('/api/rsvp', async (req, res) => {
             });
         }
 
-        const db = await createConnection();
+        if (!supabase) {
+            return res.status(500).json({
+                success: false,
+                message: 'Supabase tidak terkonfigurasi. Pastikan SUPABASE_URL dan SUPABASE_KEY ada di .env'
+            });
+        }
 
-        const result = await db.run(
-            `INSERT INTO rsvp (name, attendance, guests, message, created_at)
-       VALUES (?, ?, ?, ?, datetime('now'))`,
-            [name, attendance, parseInt(guests) || 1, message || '']
-        );
+        const { data, error } = await supabase
+            .from('rsvp')
+            .insert([
+                {
+                    name,
+                    attendance,
+                    guests: parseInt(guests) || 1,
+                    message: message || ''
+                }
+            ])
+            .select()
+            .single();
 
-        await db.close();
+        if (error) {
+            console.error('Supabase insert error:', error);
+            return res.status(500).json({
+                success: false,
+                message: `Gagal menyimpan data: ${error.message}`
+            });
+        }
 
         return res.status(201).json({
             success: true,
             message: 'RSVP berhasil disimpan',
-            data: {
-                id: result.lastID,
-                name,
-                attendance,
-                guests,
-                message
-            }
+            data
         });
     } catch (error) {
         console.error('Error saving RSVP:', error);
         return res.status(500).json({
             success: false,
-            message: 'Terjadi kesalahan saat menyimpan data'
+            message: 'Terjadi kesalahan saat menyimpan data',
+            error: error instanceof Error ? error.message : String(error)
         });
     }
 });
 
 app.get('/api/rsvp', async (req, res) => {
     try {
-        const db = await createConnection();
+        if (!supabase) {
+            return res.status(500).json({
+                success: false,
+                message: 'Supabase tidak terkonfigurasi'
+            });
+        }
 
-        const rsvps = await db.all(
-            'SELECT id, name, attendance, guests, message, created_at FROM rsvp ORDER BY created_at DESC'
-        );
+        const { data, error } = await supabase
+            .from('rsvp')
+            .select('*')
+            .order('created_at', { ascending: false });
 
-        await db.close();
+        if (error) {
+            console.error('Error fetching RSVPs:', error);
+            return res.status(500).json({
+                success: false,
+                message: 'Gagal mengambil data'
+            });
+        }
 
         return res.status(200).json({
             success: true,
-            data: rsvps
+            data
         });
     } catch (error) {
         console.error('Error fetching RSVPs:', error);
@@ -81,3 +127,4 @@ app.get('/api/rsvp', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+

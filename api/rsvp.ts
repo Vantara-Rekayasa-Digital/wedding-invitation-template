@@ -78,9 +78,9 @@ export default async function handler(
         } catch (error) {
             console.error('Error saving RSVP:', error);
             return res.status(500).json({
-                success: false,,
+                success: false,
+                message: 'Terjadi kesalahan saat menyimpan data',
                 error: error instanceof Error ? error.message : String(error)
-                message: 'Terjadi kesalahan saat menyimpan data'
             });
         }
     }
