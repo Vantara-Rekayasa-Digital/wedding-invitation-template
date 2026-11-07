@@ -34,6 +34,7 @@ const SurahSection = () => {
                             {/* Bismillah */}
                             <p className="font-arabic text-3xl md:text-4xl text-primary mb-3" dir="rtl" style={{ letterSpacing: "0.1em" }}>
                                 بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+                                lkjhasdkjhaslkdjhasldkjhasdlkjhasdlkjh
                             </p>
 
                             {/* Decorative Middle Line */}
